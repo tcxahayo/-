@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+         *{
+        margin: 0;
+        padding: 0;
+    }
+    .box{
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        width: 100px;
+        height: 100px;
+        background-color: brown;
+    }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    
+    <!-- <script>
+    //获得鼠标点击的坐标
+    var box = document.getElementsByClassName('box')[0];
+    // box.onclick = function(e){
+    //     console.log(e.clientX);
+    // }
+ 
+    //绑定事件 拖拽 down move up
+    box.addEventListener('mousedown',function(e){
+        // console.log(e.clientX,e.clientY);
+         //获得当前的left和top值
+        var l = box.offsetLeft;
+        var t = box.offsetTop;
+        //鼠标点击的点距离左边距的距离
+        var disX = e.clientX - l;
+        var disY = e.clientY - t;
+
+        // box.onmousemove = function(e){
+        document.onmousemove = function(e){
+            console.log(e.clientX,e.clientY);
+            var left = e.clientX - disX;
+            var top = e.clientY - disY;
+            box.style.left = left + 'px';
+            box.style.top = top + 'px';
+        };
+        box.onmouseup = function(){
+            // box.onmousemove = null;
+            document.onmousemove = null;
+        };
+
+    });
+    </script> -->
+    <script>
+            //获得鼠标点击的坐标
+            var box = document.getElementsByClassName('box')[0];
+            // box.onclick = function(e){
+            //     console.log(e.clientX);
+            // }
+         
+            //绑定事件 拖拽 down move up
+            box.addEventListener('mousedown',function(e1){
+                var lastX = e1.clientX;
+                var lastY = e1.clientY;
+                document.onmousemove = function(e2){
+                    var nowX = e2.clientX;
+                    var nowY = e2.clientY;
+
+                    var moveX = nowX - lastX;
+                    var moveY = nowY - lastY;
+
+                    var left = box.offsetLeft + moveX;
+                    var top = box.offsetTop + moveY;
+
+                    box.style.left = left + 'px';
+                    box.style.top = top + 'px';
+
+                    lastX = nowX;
+                    lastY = nowY;
+                };
+                document.onmouseup = function(){
+                    // box.onmousemove = null;
+                    document.onmousemove = null;
+                };
+        
+            });
+            </script>
+</body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>滚动播放</title>
+</head>
+<body>
+        Node.js 中文网 v12.9.1
+
+        assert - 断言
+        async_hooks - 异步钩子
+        Buffer - 缓冲器
+        child_process - 子进程
+        cluster - 集群
+        console - 控制台
+        crypto - 加密
+        debugger - 调试器
+        dgram - 数据报
+        dns - 域名服务器
+        domain - 域
+        Error - 异常
+        events - 事件触发器
+        fs - 文件系统
+        global - 全局变量
+        http - HTTP
+        http2 - HTTP/2
+        https - HTTPS
+        inspector - 检查器
+        module - 模块
+        net - 网络
+        os - 操作系统
+        path - 路径
+        perf_hooks - 性能钩子
+        process - 进程
+        punycode - 域名代码
+        querystring - 查询字符串
+        readline - 逐行读取
+        repl - 交互式解释器
+        stream - 流
+        string_decoder - 字符串解码器
+        timer - 定时器
+        tls - 安全传输层
+        trace_events - 跟踪事件
+        tty - 终端
+        url - URL
+        util - 实用工具
+        v8 - V8引擎
+        vm - 虚拟机
+        worker_threads - 工作线程
+        zlib - 压缩
+        关于本文档
+        用法与示例
+        C++插件
+        N-API
+        命令行选项
+        ECMAScript 模块
+        安全策略
+        诊断报表
+        国际化支持
+        废弃的 API
+        Node.js v12.9.1 文档
+        返回文档首页 搜索
+        目录
+        assert - 断言
+        async_hooks - 异步钩子
+        Buffer - 缓冲器
+        child_process - 子进程
+        cluster - 集群
+        console - 控制台
+        crypto - 加密
+        debugger - 调试器
+        dgram - 数据报
+        dns - 域名服务器
+        domain - 域
+        Error - 异常
+        events - 事件触发器
+        fs - 文件系统
+        global - 全局变量
+        http - HTTP
+        http2 - HTTP/2
+        https - HTTPS
+        inspector - 检查器
+        module - 模块
+        net - 网络
+        os - 操作系统
+        path - 路径
+        perf_hooks - 性能钩子
+        process - 进程
+        punycode - 域名代码
+        querystring - 查询字符串
+        readline - 逐行读取
+        repl - 交互式解释器
+        stream - 流
+        string_decoder - 字符串解码器
+        timer - 定时器
+        tls - 安全传输层
+        trace_events - 跟踪事件
+        tty - 终端
+        url - URL
+        util - 实用工具
+        v8 - V8引擎
+        vm - 虚拟机
+        worker_threads - 工作线程
+        zlib - 压缩
+        关于本文档
+        用法与示例
+        C++插件
+        N-API
+        命令行选项
+        ECMAScript 模块
+        安全策略
+        诊断报表
+        国际化支持
+        废弃的 API
+        Node.js 中文网 v12.9.1
+
+assert - 断言
+async_hooks - 异步钩子
+Buffer - 缓冲器
+child_process - 子进程
+cluster - 集群
+console - 控制台
+crypto - 加密
+debugger - 调试器
+dgram - 数据报
+dns - 域名服务器
+domain - 域
+Error - 异常
+events - 事件触发器
+fs - 文件系统
+global - 全局变量
+http - HTTP
+http2 - HTTP/2
+https - HTTPS
+inspector - 检查器
+module - 模块
+net - 网络
+os - 操作系统
+path - 路径
+perf_hooks - 性能钩子
+process - 进程
+punycode - 域名代码
+querystring - 查询字符串
+readline - 逐行读取
+repl - 交互式解释器
+stream - 流
+string_decoder - 字符串解码器
+timer - 定时器
+tls - 安全传输层
+trace_events - 跟踪事件
+tty - 终端
+url - URL
+util - 实用工具
+v8 - V8引擎
+vm - 虚拟机
+worker_threads - 工作线程
+zlib - 压缩
+关于本文档
+用法与示例
+C++插件
+N-API
+命令行选项
+ECMAScript 模块
+安全策略
+诊断报表
+国际化支持
+废弃的 API
+Node.js v12.9.1 文档
+返回文档首页 搜索
+目录
+assert - 断言
+async_hooks - 异步钩子
+Buffer - 缓冲器
+child_process - 子进程
+cluster - 集群
+console - 控制台
+crypto - 加密
+debugger - 调试器
+dgram - 数据报
+dns - 域名服务器
+domain - 域
+Error - 异常
+events - 事件触发器
+fs - 文件系统
+global - 全局变量
+http - HTTP
+http2 - HTTP/2
+https - HTTPS
+inspector - 检查器
+module - 模块
+net - 网络
+os - 操作系统
+path - 路径
+perf_hooks - 性能钩子
+process - 进程
+punycode - 域名代码
+querystring - 查询字符串
+readline - 逐行读取
+repl - 交互式解释器
+stream - 流
+string_decoder - 字符串解码器
+timer - 定时器
+tls - 安全传输层
+trace_events - 跟踪事件
+tty - 终端
+url - URL
+util - 实用工具
+v8 - V8引擎
+vm - 虚拟机
+worker_threads - 工作线程
+zlib - 压缩
+关于本文档
+用法与示例
+C++插件
+N-API
+命令行选项
+ECMAScript 模块
+安全策略
+诊断报表
+国际化支持
+废弃的 API
+Node.js 中文网 v12.9.1
+
+assert - 断言
+async_hooks - 异步钩子
+Buffer - 缓冲器
+child_process - 子进程
+cluster - 集群
+console - 控制台
+crypto - 加密
+debugger - 调试器
+dgram - 数据报
+dns - 域名服务器
+domain - 域
+Error - 异常
+events - 事件触发器
+fs - 文件系统
+global - 全局变量
+http - HTTP
+http2 - HTTP/2
+https - HTTPS
+inspector - 检查器
+module - 模块
+net - 网络
+os - 操作系统
+path - 路径
+perf_hooks - 性能钩子
+process - 进程
+punycode - 域名代码
+querystring - 查询字符串
+readline - 逐行读取
+repl - 交互式解释器
+stream - 流
+string_decoder - 字符串解码器
+timer - 定时器
+tls - 安全传输层
+trace_events - 跟踪事件
+tty - 终端
+url - URL
+util - 实用工具
+v8 - V8引擎
+vm - 虚拟机
+worker_threads - 工作线程
+zlib - 压缩
+关于本文档
+用法与示例
+C++插件
+N-API
+命令行选项
+ECMAScript 模块
+安全策略
+诊断报表
+国际化支持
+废弃的 API
+Node.js v12.9.1 文档
+返回文档首页 搜索
+目录
+assert - 断言
+async_hooks - 异步钩子
+Buffer - 缓冲器
+child_process - 子进程
+cluster - 集群
+console - 控制台
+crypto - 加密
+debugger - 调试器
+dgram - 数据报
+dns - 域名服务器
+domain - 域
+Error - 异常
+events - 事件触发器
+fs - 文件系统
+global - 全局变量
+http - HTTP
+http2 - HTTP/2
+https - HTTPS
+inspector - 检查器
+module - 模块
+net - 网络
+os - 操作系统
+path - 路径
+perf_hooks - 性能钩子
+process - 进程
+punycode - 域名代码
+querystring - 查询字符串
+readline - 逐行读取
+repl - 交互式解释器
+stream - 流
+string_decoder - 字符串解码器
+timer - 定时器
+tls - 安全传输层
+trace_events - 跟踪事件
+tty - 终端
+url - URL
+util - 实用工具
+v8 - V8引擎
+vm - 虚拟机
+worker_threads - 工作线程
+zlib - 压缩
+关于本文档
+用法与示例
+C++插件
+N-API
+命令行选项
+ECMAScript 模块
+安全策略
+诊断报表
+国际化支持
+废弃的 API
+Node.js 中文网 v12.9.1
+
+assert - 断言
+async_hooks - 异步钩子
+Buffer - 缓冲器
+child_process - 子进程
+cluster - 集群
+console - 控制台
+crypto - 加密
+debugger - 调试器
+dgram - 数据报
+dns - 域名服务器
+domain - 域
+Error - 异常
+events - 事件触发器
+fs - 文件系统
+global - 全局变量
+http - HTTP
+http2 - HTTP/2
+https - HTTPS
+inspector - 检查器
+module - 模块
+net - 网络
+os - 操作系统
+path - 路径
+perf_hooks - 性能钩子
+process - 进程
+punycode - 域名代码
+querystring - 查询字符串
+readline - 逐行读取
+repl - 交互式解释器
+stream - 流
+string_decoder - 字符串解码器
+timer - 定时器
+tls - 安全传输层
+trace_events - 跟踪事件
+tty - 终端
+url - URL
+util - 实用工具
+v8 - V8引擎
+vm - 虚拟机
+worker_threads - 工作线程
+zlib - 压缩
+关于本文档
+用法与示例
+C++插件
+N-API
+命令行选项
+ECMAScript 模块
+安全策略
+诊断报表
+国际化支持
+废弃的 API
+Node.js v12.9.1 文档
+返回文档首页 搜索
+目录
+assert - 断言
+async_hooks - 异步钩子
+Buffer - 缓冲器
+child_process - 子进程
+cluster - 集群
+console - 控制台
+crypto - 加密
+debugger - 调试器
+dgram - 数据报
+dns - 域名服务器
+domain - 域
+Error - 异常
+events - 事件触发器
+fs - 文件系统
+global - 全局变量
+http - HTTP
+http2 - HTTP/2
+https - HTTPS
+inspector - 检查器
+module - 模块
+net - 网络
+os - 操作系统
+path - 路径
+perf_hooks - 性能钩子
+process - 进程
+punycode - 域名代码
+querystring - 查询字符串
+readline - 逐行读取
+repl - 交互式解释器
+stream - 流
+string_decoder - 字符串解码器
+timer - 定时器
+tls - 安全传输层
+trace_events - 跟踪事件
+tty - 终端
+url - URL
+util - 实用工具
+v8 - V8引擎
+vm - 虚拟机
+worker_threads - 工作线程
+zlib - 压缩
+关于本文档
+用法与示例
+C++插件
+N-API
+命令行选项
+ECMAScript 模块
+安全策略
+诊断报表
+国际化支持
+废弃的 API
+<div style="width: 50px; height: 50px; background-color: aqua; 
+position: fixed; top: 100px; right:50px; border-radius: 50px;
+color: bisque;font-size: 16px; text-align: center; line-height: 50px; 
+opacity: 0.5; cursor: pointer;" class="demo1" >开始</div>
+
+<div style="width: 50px; height: 50px; background-color: red; 
+position: fixed; top: 200px; right:50px; border-radius: 50px;
+color: bisque;font-size: 16px; text-align: center; line-height: 50px;
+ opacity: 0.5; cursor: pointer; " class="demo2">结束</div>
+</body>
+<script>
+var start = document.getElementsByClassName('demo1')[0];
+var stop = document.getElementsByClassName('demo2')[0];
+var timer = 0;
+var key = true;
+//设置key值，防止一直点开始，导致速度一直增加，而点击停止不能停止的问题。
+start.onclick = function(){
+        if(key){
+            timer = setInterval(function(){
+            window.scrollBy(0,8);
+            },100);
+            key = false;
+        }
+    }
+    
+stop.onclick = function(){
+    clearInterval(timer);
+    key = true;
+}
+</script>
+</html>

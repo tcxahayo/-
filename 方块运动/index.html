@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>方块运动</title>
+    
+</head>
+<body>
+     <script>
+    var div = document.createElement('div');
+    document.body.appendChild(div);
+    div.style.width = '100px';
+    div.style.height = '100px';
+    div.style.backgroundColor = 'red';
+    div.style.position = 'absolute';
+    div.style.top = '0';
+    div.style.left = '0';
+    
+    var speed = 1;
+    //加速度运动
+    // var timer = setInterval(function(){
+    //     speed += speed / 7;
+    //     div.style.left = parseInt(div.style.left) + speed + 'px';
+    //     div.style.top = parseInt(div.style.top) + speed + 'px';
+    //     if(parseInt(div.style.left) > 200 && parseInt(div.style.top)>200){
+    //         //清除效果
+    //         clearInterval(timer);
+    //     }
+    // },50);
+
+    // 绑定键盘事件
+    document.onkeydown = function(e){
+        console.log(e);
+        speed += speed / 7;
+            switch(e.which){
+            case 87 : div.style.top = parseInt(div.style.top) - speed + 'px';
+            break;
+            case 83 : div.style.top = parseInt(div.style.top) + speed + 'px';
+            break;
+            case 65 : div.style.left = parseInt(div.style.left) - speed + 'px';
+            break;
+            case 68 : div.style.left = parseInt(div.style.left) + speed + 'px';
+        }
+    }
+
+    </script>
+</body>
+</html>

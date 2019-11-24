@@ -1,0 +1,48 @@
+#mine{
+    margin: 50px auto;
+}
+.level{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.level button{
+    padding: 5px 15px;
+    background:#52537e;
+    border: none;
+    color: aliceblue;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+
+}
+.level button.active{
+    background: #07070e;
+}
+.info{
+    margin-top: 10px;
+    text-align: center;
+}
+table{
+    border-spacing: 1px;
+    background: #929169;
+    margin: 0 auto;
+}
+td{
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    background: #ccc;
+    border: 2px solid;
+    border-color: #fff #a1a1a1 #a1a1a1 #fff;
+    text-align: center;
+    line-height: 20px;
+    font-weight: bold;
+}
+.mine{
+    background: #d9d9d9 url(../image/1.png) no-repeat center;
+    background-size: cover
+}
+.flag{
+    background: #ccc url(../image/2.png) no-repeat center;
+    background-size: cover
+}

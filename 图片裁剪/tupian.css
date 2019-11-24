@@ -1,0 +1,40 @@
+.content{
+    width: 720px;
+    margin: 0 auto;
+    /* border: 2px solid black; */
+    /* 解决因为浮动产生的父级高度坍塌 */
+    overflow: hidden;
+}
+.content .left{
+    width: 500px;
+    height: 500px;
+    float: left;
+    /* border: 1px solid black; */
+    background: url("./12.jpg") no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+}
+.content .right{
+    width: 150px;
+    height: 150px;
+    background: url("./12.jpg") no-repeat;
+    float: right;
+}
+.content .cut{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    left: 150px;
+    top: 150px;
+    border: 1px solid white;
+    cursor: move;
+}
+.content .resize{
+    width: 16px;
+    height: 16px;
+    background: white;
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+    cursor: nw-resize;
+}

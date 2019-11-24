@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>点名卡</title>
+    <style>
+    .wapper{
+        width: 500px;
+        height: 500px;
+        border: 1px solid black;
+    }
+    .content{
+        width: 300px;
+        height: 300px;
+        border: 1px solid #ee70ee;
+        display: none;
+    }
+    .btu{
+        background-color: blue;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="wapper">
+        <button>111</button>
+        <button>222</button>
+        <button>333</button>
+        <div class="content">内容一</div>
+        <div class="content">内容二</div>
+        <div class="content">内容三</div>
+    </div>
+    <script>
+    var btu = document.getElementsByTagName('button');
+    var div = document.getElementsByClassName('content');
+    for(var i = 0; i < btu.length; i ++){
+        (function(n){
+            btu[n].onclick = function(){
+            for(var j = 0; j < btu.length; j ++){
+                btu[j].className = '';
+                div[j].style.display = 'none';
+            }
+            this.className = 'btu';
+            div[n].style.display = 'block';
+        }
+    }(i))
+        
+    }
+    </script>
+</body>
+</html>
