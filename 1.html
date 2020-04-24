@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+ 
+  <div>
+    <img style="float: left;" src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1713396441,1487163637&fm=26&gp=0.jpg" alt="">
+    <p>BFC的约束规则
+      （1）内部的元素会在垂直方向上一个接着一个的放置。计算BFC的高度时，需要注意浮动元素也参与计算；
+      （2）Box垂直方向的距离由margin决定。注意：属于同一个BFC的两个相邻的Box的margin会发生重叠；
+      （3）生成BFC元素的子元素中，每一个子元素的margin与包含块的左边界border相接触（对于从左到右的格式化，否则相反），就算是在浮动中也一样；
+      （4）BFC的区域不会与float box重叠。
+      （5）BFC相当于页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。相反也一样。
+      
+      
+      BFC可以解决哪些问题
+      margin重叠问题、文本不环绕浮动元素问题、包裹浮动元素没有高度问题（父元素塌陷问题）等。
+      
+      作者：hh_phoebe
+      链接：https://juejin.im/post/5e9518b3518825738e21794c
+      来源：掘金
+      著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+  </div>
+
+  <script>
+
+    console.log('1');
+
+    setTimeout(function () {
+      console.log('2');
+      process.nextTick(function () {
+        console.log('3');
+      })
+      new Promise(function (resolve) {
+        console.log('4');
+        resolve();
+      }).then(function () {
+        console.log('5')
+      })
+    })
+    process.nextTick(function () {
+      console.log('6');
+    })
+    new Promise(function (resolve) {
+      console.log('7');
+      resolve();
+    }).then(function () {
+      console.log('8')
+    })
+
+    setTimeout(function () {
+      console.log('9');
+      process.nextTick(function () {
+        console.log('10');
+      })
+      new Promise(function (resolve) {
+        console.log('11');
+        resolve();
+      }).then(function () {
+        console.log('12')
+      })
+    })
+
+  </script>
+</body>
+
+</html>
